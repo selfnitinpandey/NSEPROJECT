@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+<div class="container" style="margin-top:40px;">
+    <div class="card-group">
+  <div class="card m-5 bg-success">
+    <a href="{% url 'bhavcopy' %}"><img src="static/image/bhavcopy2.jfif" class="card-img-top img-thumbnail" alt="..."></a>
+    <div class="card-body">
+      <h5 class="card-title text-light text-center">Daily Bhavcopy</h5>
+    </div>
+  </div>
+  <div class="card m-5  bg-success">
+    <a href="{% url 'gainloose' %}"><img src="static/image/tp.jpg" class="card-img-top img-thumbnail" alt="..."></a>
+    <div class="card-body">
+      <h5 class="card-title text-light text-center">Top Gainers and Losers</h5>
+
+    </div>
+  </div>
+  <div class="card m-5  bg-success">
+    <a href="{% url 'fpidata' %}"><img src="static/image/fpi.png" class="card-img-top img-thumbnail" alt="..."></a>
+    <div class="card-body">
+      <h5 class="card-title text-light text-center">Foreign Portfolio Investment</h5>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock content %}

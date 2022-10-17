@@ -1,0 +1,58 @@
+<style>
+  .mynavbar{
+    background-color:darkslategrey;
+    margin-top:2px;
+    box-shadow:1px 6px 5px gray;
+    position:fixed;
+    top:0;
+    z-index:99;
+    }
+    #navbarNav a{
+       color:white;
+       letter-spacing:2px;
+    }
+    #navbarNav li:hover{
+       background-color:red;
+       font-weight: bold;
+       border-radius: 7px;
+    }
+    .a{
+      color:yellow;
+    }
+    .a:hover{
+      color:white;
+    }
+    .a,i{
+      font-size:larger;
+    }
+</style>
+<!--navbar-->
+<nav class="navbar navbar-expand-lg mynavbar fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'home' %}" style='color:orange;font-weight:bold;1'>National Stock Exchange</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon text-white"><i class="fas fa-bars"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i class="fas fa-home"></i>Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'bhavcopy' %}"><i class="fas fa-book"></i>Bhavcopy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'gainloose' %}"><i class="fas fa-rupee-sign"></i>TopGainLose</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'fpidata' %}"><i class="fas fa-database"></i>FpiData</a>
+        </li>
+      </ul>
+    </div>
+          <a class="nav-link a" href="https://www.facebook.com/" target=""><i class='fab fa-facebook'></i></a>
+          <a class="nav-link a" href="https://www.twitter.com/" target="blank"><i class='fab fa-twitter'></i></a>
+          <a class="nav-link a" href="https://www.youtube.com/" target="blank"><i class='fab fa-youtube'></i></a>
+  </div>
+</nav>

@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block title %}TopGainLose{% endblock title %}
+  {% block msg %}-->
+  {% if messages %}
+  <ul class="messages alert-warning text-danger" style="margin-top:100px; font-size:20px; font-weight:bold;">
+      {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+  </ul>
+  {% endif %}
+ {% endblock msg %}
+  {% block content %}
+  <div class="container-fluid" style="margin-top:60px;">
+    <div class="text-center border bg-dark"><h2 class="text-info"><b><u><marquee direction="left">TopGainers</marquee></u></b></h2></div>
+    <table class="table table-dark table-striped mt-1" style="font-size:15">
+      <thead style="font-size:17">
+        <tr>
+          <th>SYMBOL</th>
+          <th>OPENPRICE</th>
+          <th>HIGHPRICE</th>
+          <th>LOWPRICE</th>
+            <th>LTP</th>
+          <th>PRIVIOUSPRICE</th>
+          <th>NETPRICE</th>
+          <th>TQ</th>
+          <th>TOILACKS</th>
+          <th>LCAD</th>
+          <th>LCA</th>
+        </tr>
+      </thead>
+      <tbody>
+     {% if dg %}
+      {% for i in dg %}
+        <tr>
+
+          <td>{{i.symbol}}</td>
+          <td>{{i.openPrice}}</td>
+          <td>{{i.highPrice}}</td>
+          <td>{{i.lowPrice}}</td>
+            <td>{{i.ltp}}</td>
+          <td>{{i.previousPrice}}</td>
+          <td>{{i.netPrice}}</td>
+          <td>{{i.tradedQuantity}}</td>
+          <td>{{i.turnoverInLakhs}}</td>
+            <td>{{i.lastCorpAnnouncementDate}}</td>
+          <td>{{i.lastCorpAnnouncement}}</td>
+        </tr>
+      {% endfor %}
+      {% else %}
+      <h5 class="text-center text-danger"><b>No Records Found From National Stock Exchange</b></h5>
+      {% endif %}
+      </tbody>
+    </table>
+  </div>
+  <!--loosers-->
+
+  <div class="container-fluid" style="margin-top:10px;">
+    <div class="text-center border bg-dark"><h2 class="text-info"><b><u><marquee direction="left">TopLosers</marquee></u></b></h2></div>
+    <table class="table table-dark table-striped mt-1" style="font-size:15">
+      <thead style="font-size:17">
+        <tr>
+          <th>SYMBOL</th>
+          <th>OPENPRICE</th>
+          <th>HIGHPRICE</th>
+          <th>LOWPRICE</th>
+            <th>LTP</th>
+          <th>PRIVIOUSPRICE</th>
+          <th>NETPRICE</th>
+          <th>TQ</th>
+          <th>TOILACKS</th>
+          <th>LCAD</th>
+          <th>LCA</th>
+        </tr>
+      </thead>
+      <tbody>
+     {% if dl %}
+      {% for i in dl %}
+        <tr>
+
+          <td>{{i.symbol}}</td>
+          <td>{{i.openPrice}}</td>
+          <td>{{i.highPrice}}</td>
+          <td>{{i.lowPrice}}</td>
+            <td>{{i.ltp}}</td>
+          <td>{{i.previousPrice}}</td>
+          <td>{{i.netPrice}}</td>
+          <td>{{i.tradedQuantity}}</td>
+          <td>{{i.turnoverInLakhs}}</td>
+            <td>{{i.lastCorpAnnouncementDate}}</td>
+          <td>{{i.lastCorpAnnouncement}}</td>
+        </tr>
+      {% endfor %}
+      {% else %}
+      <h3 class="text-center">No Records Found From National Stock Exchange</h3>
+      {% endif %}
+      </tbody>
+    </table>
+  </div>
+{% endblock content %}

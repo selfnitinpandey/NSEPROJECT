@@ -1,0 +1,23 @@
+{% load static %}
+<html lang="en">
+<head>
+        <title>{% block title %}{% endblock title %}</title>
+    {% block msg %}{% endblock msg %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+</head>
+<body>
+<div class="container-fluid">
+    {% include 'nav.html' %}
+    {% block content %}
+    {% endblock content %}
+</div>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/popper.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/all.js' %}"></script>
+<script src="{% static 'js/myscript.js' %}"></script>
+</body>
+</html>

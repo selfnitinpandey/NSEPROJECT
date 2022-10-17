@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    option{
+    font-weight:bold;
+    }
+</style>
+<div class="container border-bottom b-2" style="margin-top:70px;" >
+    <form method="post" action="">
+        {% csrf_token %}
+        <select name="op" id="op" class="form-select" style="font-weight:bold">
+<!--            <option value="select">select</option>-->
+            <option value="FEB152022">FEB-15-2022</option>
+            <option value="JAN312022">JAN-31-2022</option>
+            <option value="JAN152022">JAN-15-2022</option>
+            <option value="DEC312021">DEC-31-2021</option>
+            <option value="DEC152021">DEC-15-2021</option>
+            <option value="NOV302021">NOV-30-2021</option>
+            <option value="NOV152021">NOV-15-2021</option>
+            <option value="NOV152021">NOV-15-2021</option>
+            <option value="OCT152021">OCT-15-2021</option>
+            <option value="SEP302021">SEP-30-2021</option>
+            <option value="SEP152021">SEP-15-2021</option>
+            <option value="AUGUST312021">AUG-31-2021</option>
+            <option value="AUGUST152021">AUG-15-2021</option>
+            <option value="JULY312021">JUL-31-2021</option>
+            <option value="JULY152021">JUL-15-2021</option>
+            <option value="JUNE302021">JUN-30-2021</option>
+        </select>
+        <input type="submit" value="Load-Data"class="btn-success btn-md m-2">
+        <button class="btn-info btn-md"><a href="{{url}}" target="con" class="text-dark" style="text-decoration:none;">Show-Data</a></button>
+    </form>
+</div>
+
+    {% endblock content %}
